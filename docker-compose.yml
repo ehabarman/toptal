@@ -1,0 +1,26 @@
+version: '3.3'
+services:
+  toptal-db:
+    image: mysql:8.0.19
+    ports:
+      - "3306:3306"
+    restart: always
+    environment:
+      MYSQL_DATABASE: toptal
+      MYSQL_USER: toptal
+      MYSQL_PASSWORD: qweasdzxc155
+      MYSQL_ROOT_PASSWORD: qweasdzxc2020
+    # default path: /var/run/mysqld is insecure
+    # consider changing it
+    # volumes:
+    #   - db-data:/var/lib/toptal
+
+#  toptal-backend:
+#    - .:/app
+#    - ~/.m2:/root/.m2
+#    working_dir: /app
+#      ports:
+#        - 8080:8080
+#      command: mvn clean spring-boot:run
+#      depends_on:
+#        - toptal-db
